@@ -35,12 +35,25 @@ return {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-nvim-lsp-signature-help',
+      'rafamadriz/friendly-snippets',
+      'onsails/lspkind.nvim',
     },
     config = function()
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
+
+      local lspkind = require 'lspkind'
+
+      -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
+      require('luasnip.loaders.from_vscode').lazy_load()
+
+      require('luasnip').filetype_extend('php', { 'html' })
+      require('luasnip').filetype_extend('php', { 'phpdoc' })
+      require('luasnip').filetype_extend('php', { 'blade' })
+      require('luasnip').filetype_extend('blade', { 'html' })
+      require('luasnip').filetype_extend('vue', { 'html' })
 
       cmp.setup {
         snippet = {
@@ -112,6 +125,13 @@ return {
           { name = 'luasnip' },
           { name = 'path' },
           { name = 'nvim_lsp_signature_help' },
+        },
+        -- configure lspkind for vs-code like pictograms in completion menu
+        formatting = {
+          format = lspkind.cmp_format {
+            maxwidth = 50,
+            ellipsis_char = '...',
+          },
         },
       }
     end,
