@@ -222,7 +222,7 @@ return {
             -- ['language_server_phpstan.config'] = 'phpstan.neon',
             ['language_server_configuration.auto_config'] = false,
             ['language_server_worse_reflection.inlay_hints.enable'] = true,
-            ['language_server_worse_reflection.inlay_hints.types'] = false,
+            ['language_server_worse_reflection.inlay_hints.types'] = true,
             ['language_server_worse_reflection.inlay_hints.params'] = true,
             ['code_transform.import_globals'] = false,
             ['indexer.exclude_patterns'] = {
@@ -244,6 +244,7 @@ return {
             ['language_server_phpstan.enabled'] = true,
             -- ['language_server_phpstan.level'] = '5',
             ['language_server_phpstan.bin'] = '%project_root%/vendor/bin/phpstan',
+            ['language_server_phpstan.config'] = '%project_root%/phpstan.neon',
             ['language_server_phpstan.mem_limit'] = '2048M',
           },
           handlers = {
