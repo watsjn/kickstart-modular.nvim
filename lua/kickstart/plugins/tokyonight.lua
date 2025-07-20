@@ -22,6 +22,7 @@ return {
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       vim.cmd.colorscheme 'tokyonight-moon'
     end,
+    enabled = false,
   },
 }
 -- vim: ts=2 sts=2 sw=2 et
