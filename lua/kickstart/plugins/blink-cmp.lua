@@ -92,7 +92,7 @@ return {
       },
 
       sources = {
-        default = { 'buffer', 'lsp', 'path', 'snippets', 'lazydev', 'ripgrep' },
+        default = { 'lsp', 'snippets', 'buffer', 'path', 'lazydev', 'ripgrep' },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
           ripgrep = {

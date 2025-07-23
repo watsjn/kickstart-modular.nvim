@@ -29,6 +29,8 @@ return {
     vim.api.nvim_create_autocmd('User', {
       pattern = 'PersistenceSavePre',
       callback = function()
+        -- Close terminal
+        vim.cmd 'TermKill'
         -- Save the current tab to restore later
         local current_tab = vim.api.nvim_get_current_tabpage()
 
